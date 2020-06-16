@@ -88,8 +88,10 @@ class Chat extends React.Component{
         setTimeout(() => {
             this.loadChat()
         }, 100)
-        document.getElementById('my-room-area').style.display ="none";
-        document.getElementById('my-close-btn').style.display ="none";
+        if(window.screen.width <= 500){
+            document.getElementById('my-room-area').style.display ="none";
+            document.getElementById('my-close-btn').style.display ="none";
+        }
     }
 
     formatTime(timestamp) {
@@ -107,7 +109,7 @@ class Chat extends React.Component{
                     href='javascript: void(o)'
                     class= "close-btn"
                     onClick={this.closeNav}
-                >&times;</a>
+                />
                     <div className="chat-box">
                         <div id='my-room-area' className="room-area" style={{position:'relative'}}>
                             
