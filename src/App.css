@@ -33,9 +33,10 @@ body {
 .room-area{
   width: 30%;
   height: 89.5vh;
-  background: lightseagreen;
+  background: #343a40;
   margin-top: 64px;
   text-align: center;
+  position: relative;
 }
 
 .chat-box{
@@ -86,6 +87,7 @@ body {
   bottom: 50px;
   margin: 10px;
   font-family: 'Baloo 2';
+  color: aqua;
 }
 
 .form-control:focus {
@@ -96,7 +98,8 @@ body {
   margin-top: 10px;
 }
 .send-button{
-  margin-left: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 40px;
   height: 40px;
   background-image: url('./icons/send-message-2.png');
@@ -139,6 +142,7 @@ body {
   color: #fff;
   height: 10vh;
   padding-top: 10px;
+  border-bottom: 1px solid gray;
 }
 .room-list:hover{
   background: #fff;
@@ -156,6 +160,9 @@ body {
   height: 10vh;
   padding-top: 10px;
   cursor: pointer;
+}
+.open-room-area{
+  display: none;
 }
 
 div::-webkit-scrollbar-thumb{
@@ -179,5 +186,62 @@ div::-webkit-scrollbar-thumb{
 
   .chat-area .chat-bubble {
     max-width: 250px;
+  }
+}
+
+@media (max-width: 500px){
+  .room-area{
+    display: none;
+    position: fixed;
+    z-index: 10;
+    transition: 0.5s;
+  }
+  .chat-area{
+    width: 100vw;
+    padding: 5px;
+  }
+  .chat-container{
+    padding: 0;
+  }
+  .type-area{
+    width: 100vw;
+    padding-left: 3px;
+  }
+  .chat-box{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    transition: margin-left .5s;
+    
+  }
+  .open-room-area{
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    background-image: url('./icons/burger-menu.png');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    display: block;
+    background-position: center;
+    border: none;
+    border-radius: 15px;
+  }
+  .close-btn{
+    display: none;
+    margin-top: 10%;
+    z-index: 100;
+    position: absolute;
+    right:10px;
+    top: 30px;
+    color: red;
+    font-size: 55px;
+  }
+  .howdy-signin{
+    width: 100vw;
+  }
+  .container{
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-y: hidden ;
   }
 }

@@ -60,7 +60,7 @@ class App extends Component{
 
   render(){
     return this.state.loading === true ? <h2>Loading...</h2> : (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <PrivateRoute path="/profile" authenticated={this.state.authenticated} component={Profile}></PrivateRoute>

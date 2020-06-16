@@ -2,7 +2,13 @@
   "name": "howdy",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://venaz-dev.github.io/howdy",
   "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "gh-pages": "^3.0.0",
+    "git": "^0.1.5",
     "cra-template": "1.0.3",
     "firebase": "^7.15.1",
     "react": "^16.13.1",
@@ -14,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

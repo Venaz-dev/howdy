@@ -45,9 +45,6 @@ class SignUp extends React.Component{
                     </h1>
                     <p className="lead">Fill in the form below to create an account.</p>
                     <div className="form-group">
-                        <input className="form-control" placeholder="Username" name="username" type="text" onChange={this.handleChange} value={this.state.username}></input>
-                    </div>
-                    <div className="form-group">
                         <input className="form-control" placeholder="Email" name="email" type="email" onChange={this.handleChange} value={this.state.email}></input>
                     </div>
                     

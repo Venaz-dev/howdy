@@ -17,6 +17,17 @@ class Chat extends React.Component{
     }
 
     
+    openNav = () =>{
+        document.getElementById('my-room-area').style.display ="block";
+        document.getElementById('my-room-area').style.width ="70%";
+        document.getElementById('my-chat-area').style.width = '30%'
+        document.getElementById('my-close-btn').style.display ="block";
+    }
+
+    closeNav =() =>{
+        document.getElementById('my-room-area').style.display ="none";
+        document.getElementById('my-close-btn').style.display ="none";
+    }
 
      componentDidMount(){
         this.loadChat()
@@ -77,6 +88,8 @@ class Chat extends React.Component{
         setTimeout(() => {
             this.loadChat()
         }, 100)
+        document.getElementById('my-room-area').style.display ="none";
+        document.getElementById('my-close-btn').style.display ="none";
     }
 
     formatTime(timestamp) {
@@ -88,10 +101,17 @@ class Chat extends React.Component{
     render(){
         return(
             <div className="chat-container">
-                <Header />
+                <Header /> 
+                <a 
+                    id='my-close-btn'
+                    href='javascript: void(o)'
+                    class= "close-btn"
+                    onClick={this.closeNav}
+                >&times;</a>
                     <div className="chat-box">
-                        <div className="room-area" style={{position:'relative'}}>
-                            <h2 style={{marginTop:'20px', borderBottom:'2px solid #575757'}}>Chat Rooms</h2>
+                        <div id='my-room-area' className="room-area" style={{position:'relative'}}>
+                            
+                            <h2 style={{marginTop:'20px', borderBottom:'2px solid #575757', color:'aqua'}}>Chat Rooms</h2>
                             {this.state.rooms.map((room, index) =>{
                                 return( 
                                     <div 
@@ -100,13 +120,13 @@ class Chat extends React.Component{
                                         onClick={() => this.handleClick(this.state.rooms[index])}
                                     >       
                                             <h3 >{this.state.rooms[index]}</h3>
-                                        </div>
+                                    </div>
                                 )
                             })}
-                            <h3 className="signed-in">Signed in as <Link to="/profile" style={{color:'#fff'}}>{this.state.user.displayName}</Link></h3>
+                            <h3 className="signed-in">Signed in as: <Link to="/profile" style={{color:'#fff'}}>{this.state.user.displayName}</Link></h3>
                         </div>
-                        <div>
-                            <div className="chat-area">
+                        <div id='my-chat-area'>
+                            <div  className="chat-area">
                                 {this.state.chats.map(chat => {
                                     return (
                                         <div>
@@ -125,7 +145,11 @@ class Chat extends React.Component{
                             </div>
                             {this.state.user.displayName === null ? 
                                 <p className="text-danger">Update your profile userName to chat</p> :
-                                <form onSubmit={this.handleSubmit} className="type-area">
+                                <form id='my-type-area' onSubmit={this.handleSubmit} className="type-area">
+                                    <button 
+                                        onClick={this.openNav} 
+                                        className="open-room-area" 
+                                    ></button>
                                     <input 
                                         className="form-control" 
                                         name="content"
@@ -134,14 +158,12 @@ class Chat extends React.Component{
                                         value={this.state.content}
                                     />
                                     {this.state.error ? <p className="text-danger">{this.state.error}</p> : null}
-                                    {this.state.content === '' ? 
-                                        null 
-                                        :
+                                    
                                         <button 
                                             type="submit" 
                                             className="send-button" 
                                         ></button>
-                                    }
+                                    
                                     
                                 </form>
                             }
