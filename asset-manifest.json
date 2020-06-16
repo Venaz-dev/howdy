@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/howdy/static/css/main.65beb66d.chunk.css",
+    "main.js": "/howdy/static/js/main.0d66fb1a.chunk.js",
+    "main.js.map": "/howdy/static/js/main.0d66fb1a.chunk.js.map",
+    "runtime-main.js": "/howdy/static/js/runtime-main.c6244576.js",
+    "runtime-main.js.map": "/howdy/static/js/runtime-main.c6244576.js.map",
+    "static/js/2.b98707d4.chunk.js": "/howdy/static/js/2.b98707d4.chunk.js",
+    "static/js/2.b98707d4.chunk.js.map": "/howdy/static/js/2.b98707d4.chunk.js.map",
+    "index.html": "/howdy/index.html",
+    "precache-manifest.1a3f7159237c043da3793c1931bce762.js": "/howdy/precache-manifest.1a3f7159237c043da3793c1931bce762.js",
+    "service-worker.js": "/howdy/service-worker.js",
+    "static/css/main.65beb66d.chunk.css.map": "/howdy/static/css/main.65beb66d.chunk.css.map",
+    "static/js/2.b98707d4.chunk.js.LICENSE.txt": "/howdy/static/js/2.b98707d4.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/howdy/static/media/cancel.576f26ff.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c6244576.js",
+    "static/js/2.b98707d4.chunk.js",
+    "static/css/main.65beb66d.chunk.css",
+    "static/js/main.0d66fb1a.chunk.js"
+  ]
+}
